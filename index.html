@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Produtos</title>
+    <meta property="og:title" content="BetsBola - A Melhor Plataforma de Apostas Esportivas">
+    <meta property="og:description" content="Junte-se à BetsBola e aproveite a conveniência de apostar em esportes e comprar produtos, bebidas e suplementos!">
+    <meta property="og:image" content="https://lojabetsbolapb.netlify.app/static/images/logo-icon.png">
+    <meta property="og:url" content="https://lojabetsbolapb.netlify.app/static/images/logo-icon.png">
+    
+    <link rel="icon" href="static/images/logo-icon.png" type="image/png">
+    
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212; /* Fundo principal escuro */
+            color: #ffffff; /* Textos em branco */
+        }
+        * {
+            box-sizing: border-box;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Header */
+        header {
+            background-color: #1f1f1f; /* Fundo do header mais escuro */
+            color: #ffffff; /* Texto claro */
+            padding: 20px;
+            text-align: center;
+        }
+        header img {
+            max-width: 40%;
+            height: auto;
+        }
+
+        /* Navegação */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333333; /* Fundo escuro */
+            padding: 10px;
+        }
+        nav a {
+            color: #ffffff; /* Links brancos */
+            padding: 15px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+        nav img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+        nav a:hover {
+            background-color: #444444; /* Destaque ao passar o mouse */
+        }
+
+        /* Menu Principal */
+        .menu-principal {
+            text-align: center;
+            padding: 40px;
+            background-color: #1f1f1f; /* Fundo escuro */
+        }
+        .menu-principal img {
+            width: 200px;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        /* Produtos */
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .product {
+            background-color: #1e1e1e; /* Fundo escuro */
+            margin: 15px;
+            padding: 20px;
+            border: 1px solid #333333; /* Bordas escuras */
+            text-align: center;
+            width: 300px;
+            transition: transform 0.3s;
+            color: #ffffff; /* Textos claros */
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        /* Botões */
+        .buy-btn, .whatsapp-btn {
+            display: inline-block;
+            background-color: #007bff; /* Azul para contraste */
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .buy-btn:hover, .whatsapp-btn:hover {
+            background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #333333; /* Fundo escuro */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Seções de informações */
+        .info-section {
+            padding: 20px;
+            text-align: center;
+            background-color: #1f1f1f; /* Fundo escuro */
+            margin: 20px 0;
+            color: #bbbbbb; /* Texto em cinza claro */
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                padding: 5px;
+            }
+            .product {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                font-size: 10px;
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="static/images/menu_image.png" alt="Imagem do Menu Principal">
+    <h1>Bem-vindo à Nossa Loja de Produtos</h1>
+</header>
+
+<nav>
+    <a href="inicio.html">
+        <img src="static/images/home_icon.png" alt="Início">Início
+    </a>
+    <a href="produtos.html">
+        <img src="static/images/products_icon.png" alt="Produtos">Produtos
+    </a>
+    <a href="about.html">
+        <img src="static/images/about_icon.png" alt="Sobre Nós">Sobre Nós
+    </a>
+    <a href="https://betsbola.com/">
+        <img src="static/images/aposta_icon.png" alt="Apostas">Apostas
+    </a>
+    <a href="contato.html">
+        <img src="static/images/contact_icon.png" alt="Contato">Contato
+    </a>
+</nav>
+
+<!-- Seção de Menu Principal -->
+<section id="home" class="menu-principal">
+    <h2>Menu Principal</h2>
+    <p>Bem-vindo ao menu principal da nossa loja. Explore nossos produtos e entre em contato se precisar de ajuda!</p>
+    <img src="static/images/menu_image.png" alt="Imagem do Menu Principal">
+</section>
+
+<section class="info-section" id="sobre">
+    <h2>Sobre Nossos Produtos</h2>
+    <p>Oferecemos uma ampla variedade de produtos de alta qualidade para atender às suas necessidades. Nossos produtos são cuidadosamente selecionados para garantir a satisfação de nossos clientes.</p>
+</section>
+
+<section class="products" id="produtos">
+    <div class="product">
+        <img src="static/images/produto1.png" alt="Produto 1">
+        <h2>COCA-COLA LATA</h2>
+        <p>R$ 5,00</p>
+        <button class="buy-btn" onclick="sendToWhatsApp('COCA-COLA LATA', '5,00')">Comprar</button>
+    </div>
+    <div class="product">
+        <img src="static/images/produto2.png" alt="Produto 2">
+        <h2>MONTILA</h2>
+        <p>R$ 30,00</p>
+        <button class="buy-btn" onclick="sendToWhatsApp('MONTILA', '30,00')">Comprar</button>
+    </div>
+</section>
+
+<section class="info-section" id="contato">
+    <h2>Entre em Contato Conosco</h2>
+    <p>Se você tiver alguma dúvida ou quiser saber mais sobre nossos produtos, não hesite em entrar em contato conosco. Clique no botão abaixo para falar diretamente com a gente pelo WhatsApp!</p>
+    <a href="https://w.app/WrCjnl" class="whatsapp-btn" target="_blank">Entre em contato pelo WhatsApp</a>
+</section>
+
+</body>
+</html>

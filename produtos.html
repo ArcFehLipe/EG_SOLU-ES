@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <title>Loja de Produtos</title>
+     <meta property="og:title" content="BetsBola - A Melhor Plataforma de Apostas Esportivas">
+    <meta property="og:description" content="Junte-se à BetsBola e aproveite a conveniência de apostar em esportes e comprar produtos, bebidas e suplementos!">
+    <meta property="og:image" content="https://lojabetsbolapb.netlify.app/static/images/logo-icon.png">
+    <meta property="og:url" content="https://lojabetsbolapb.netlify.app/static/images/logo-icon.png">
+    
+    <link rel="icon" href="static/images/logo-icon.png" type="image/png">
+    
+   
+</head> <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Garantir que todos os elementos respeitem a largura da tela */
+* {
+    box-sizing: border-box;
+}
+
+/* Corrigir qualquer largura excessiva de imagens ou elementos */
+img {
+    max-width: 30%;
+    height: auto;
+}
+
+/* Para garantir que não haja margens inesperadas no lado direito */
+.products, .menu-principal, .info-section {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Adicionar uma cor de fundo para garantir que o layout preencha a área toda */
+body {
+    background-color: #000; /* Cor de fundo do body */
+}
+        header {
+            background-color: #000000;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .category {
+    color: white;
+}
+
+        header img {
+            max-width: 20%;
+            height: auto;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333  ;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+        nav img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+        nav a:hover {
+            background-color: #333;
+        }
+
+        /* Efeito de pulsação ao adicionar um produto ao carrinho */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.added-to-cart {
+    animation: pulse 0.5s ease-in-out; /* Duração e suavidade da animação */
+    background-color: #28a745; /* Cor do fundo quando o item é adicionado */
+    color: white; /* Cor do texto */
+}
+
+
+        .category-menu {
+            display: flex;
+            justify-content: center;
+            background-color: #000;
+            padding: 10px;
+        }
+        .category-menu a {
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .category-menu img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+        
+        .category-menu a:hover {
+            background-color: #555;
+        }
+
+
+        .menu-principal {
+            text-align: center;
+            padding: 40px;
+            background-color: #f0f0f0;
+        }
+        
+        .menu-principal img {
+            width: 200px;
+            height: auto;
+            margin-top: 20px;
+        }
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .product {
+            background-color: #1e1e1e; /* Fundo escuro */
+            margin: 15px;
+            padding: 20px;
+            border: 1px solid #333333; /* Bordas escuras */
+            text-align: center;
+            width: 300px;
+            transition: transform 0.3s;
+            color: #ffffff; /* Textos claros */
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+        .product:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .whatsapp-btn {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .whatsapp-btn:hover {
+            background-color: #1ebf57;
+        }
+        .info-section {
+            padding: 20px;
+            text-align: center;
+            background-color: #f9f9f9;
+            margin: 20px 0;
+        }
+        .info-section p {
+            font-size: 18px;
+            color: #333;
+        }
+        .buy-btn, .add-to-cart-btn, .remove-from-cart-btn {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .buy-btn:hover, .add-to-cart-btn:hover {
+            background-color: #218838;
+        }
+        .remove-from-cart-btn {
+            background-color: #dc3545;
+            margin-left: 10px;
+        }
+        .remove-from-cart-btn:hover {
+            background-color: #c82333;
+        }
+        #total-section {
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+        }
+        #cart-items {
+            text-align: center;
+            color: white;
+            margin: 20px 0;
+        }
+        #total-value {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .info-section {
+            padding: 10px;
+            text-align: center;
+            background-color: #f9f9f9;
+            margin: 20px 0;
+        }
+        .info-section p {
+            font-size: 18px;
+            color: #333;
+        }
+        .buy-btn {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .buy-btn:hover {
+            background-color: #218838;
+        }
+
+
+        .hamburger {
+            display: inline-block;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    position: absolute;
+    left: 10px; /* Posiciona à esquerda */
+    top: 10px; /* Ajusta a distância do topo, você pode modificar conforme a necessidade */
+        }
+        .hamburger div {
+            display: flex;
+            background-color: #f9f9f9;
+            height: 3px;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+        
+        /* Esconder o menu por padrão */
+        .menu {
+            display: none;
+            justify-content: center;
+            background-color: #555  ;
+            padding: 10px;
+        }
+
+        .menu li img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+
+        .menu li {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .menu li a {
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        .menu li a:hover {
+            color: #dddddd;
+        }
+        .menu li:hover {
+    background-color: #333; /* Rosa claro */
+}
+.menu li:active {
+    background-color: #fafafa; /* Rosa mais forte */
+}
+
+        /* Quando o menu estiver aberto */
+        .menu.active {
+            display: block;
+        }
+        
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header {
+                padding: 10px;
+            }
+            nav {
+                flex-direction: column;
+                padding: 5px;
+            }
+            nav a {
+                font-size: 12px;
+                padding: 10px;
+            }
+
+
+
+            .category-menu {
+                flex-direction: column;
+                padding: 5px;
+            }
+            .category-menu a {
+                font-size: 12px;
+                padding: 10px;
+            }    
+
+
+            .menu-principal {
+                padding: 20px;
+            }
+            .products {
+                flex-direction: column;
+                padding: 10px;
+            }
+            .product {
+                width: 100%;
+                margin: 10px 0;
+            }
+            .product img {
+                width: 80%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                font-size: 10px;
+                padding: 5px;
+            }
+            .menu-principal img {
+                width: 150px;
+            }
+            .product img {
+                width: 70%;
+            }
+            .product {
+                padding: 15px;
+            }
+        }
+    </style>
+<body>
+
+    <header>
+        <img src="static/images/menu_image.png" alt="Imagem do Menu Principal">
+        <h1>Bem-vindo à Nossa Loja de Produtos</h1>
+    </header>
+
+      <!-- Ícone de 3 traços (hambúrguer) -->
+<div class="hamburger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+<!-- Menu que será exibido ao clicar no ícone -->
+<ul class="menu" id="menu">
+    <li><a href="inicio.html">
+        <img src="static/images/home_icon.png" alt="Inicio">Inicio
+    </a></li>
+    <li><a href="about.html">
+        <img src="static/images/about_icon.png" alt="Sobre Nós">Sobre Nós
+    </a></li>
+    <li><a href="https://betsbola.com/">
+        <img src="static/images/aposta_icon.png" alt="Apostas">Apostas
+    </a></li>
+    <li><a href="contato.html">
+        <img src="static/images/contact_icon.png" alt="Contato">Contato
+    </a></li>
+</ul>
+
+    <!-- Menu de Navegação por Categoria -->
+    <nav>
+        <a href="#ENTRETEDIMENTO">
+            <img src="static/images/bebidas.png" alt="ENTRETEDIMENTO">ENTRETEDIMENTO
+        </a>
+        <a href="#INTERNET">
+            <img src="static/images/alimentos_icon.png" alt="INTERNET">INTERNET
+        </a>
+        </nav>
+
+       
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('menu');
+        menu.classList.toggle('active'); // Alterna a classe 'active' para mostrar/esconder o menu
+    }
+</script>
+
+<button class="add-to-cart-btn" id="toggle-scroll-btn">Desativar Animação</button>
+
+
+        <section id="cart-items">
+        <h3>Itens no Carrinho</h3>
+        <ul id="cart-list"></ul>
+    </section>
+    
+    <section id="total-section">
+        <p>Total: <span id="total-value">R$ 0,00</span></p>
+        <button class="whatsapp-btn" onclick="sendToWhatsApp()">Finalizar Compra pelo WhatsApp</button>
+    </section>
+    
+    <script>
+        let cart = [];
+        let total = 0;
+
+        function updateCartDisplay() {
+            const cartList = document.getElementById('cart-list');
+            cartList.innerHTML = ''; // Limpa a lista antes de atualizar
+
+            cart.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.textContent = `${item.product}: R$ ${item.price.toFixed(2)} - ${item.details || 'Sem detalhes'}`;
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'Remover';
+                removeButton.className = 'remove-from-cart-btn';
+                removeButton.onclick = () => removeFromCart(index);
+                li.appendChild(removeButton);
+                cartList.appendChild(li);
+            });
+
+            document.getElementById('total-value').textContent = `R$ ${total.toFixed(2)}`;
+        }
+
+        function askForDetails(product, price) {
+            const details = prompt(`Por favor, forneça os detalhes para ${product}:`);
+            if (details) {
+                addToCart(product, price, details);
+            } else {
+                alert('Você precisa fornecer detalhes para adicionar ao carrinho.');
+            }
+        }
+
+        let isScrollEnabled = true; // Estado inicial, com o scroll ativado
+
+// Função para alternar a ativação do scroll
+document.getElementById('toggle-scroll-btn').addEventListener('click', function() {
+    isScrollEnabled = !isScrollEnabled; // Alterna entre ativado/desativado
+    this.textContent = isScrollEnabled ? 'Desativar Animação' : 'Ativar Animação'; // Altera o texto do botão
+});
+
+function addToCart(product, price, details) {
+    // Adiciona o produto ao carrinho
+    cart.push({ product, price, details });
+    total += price;
+    updateCartDisplay();
+
+    // Se o scroll estiver ativado, rola até o carrinho
+    if (isScrollEnabled) {
+        const cartSection = document.getElementById('cart-items');
+        
+        // Aplicar o efeito visual ao adicionar ao carrinho
+        cartSection.classList.add('added-to-cart');
+        
+        // Scroll até a seção do carrinho
+        cartSection.scrollIntoView({
+            behavior: 'smooth', // Efeito de rolagem suave
+            block: 'start' // Rola até o início do carrinho
+        });
+
+        // Remove a animação após um tempo
+        setTimeout(() => {
+            cartSection.classList.remove('added-to-cart');
+        }, 500); // 0.5 segundos de duração da animação
+    }
+}
+
+        function removeFromCart(index) {
+            total -= cart[index].price; // Subtrai o valor do produto removido
+            cart.splice(index, 1); // Remove o item do array
+            updateCartDisplay(); // Atualiza o carrinho
+        }
+
+        function sendToWhatsApp() {
+            if (cart.length === 0) {
+                alert('Seu carrinho está vazio!');
+                return;
+            }
+
+            let message = 'Pedido:\n';
+            cart.forEach(item => {
+                message += `- ${item.product}: R$ ${item.price.toFixed(2)} (${item.details || 'Sem detalhes'})\n`;
+            });
+            message += `\nTotal: R$ ${total.toFixed(2)}`;
+
+            const whatsappUrl = `https://wa.me/558387202109?text=SEJA%20BEM%20VINDO%20A%20BETSBOLA%20%0A%0A${encodeURIComponent(message)}%0A%0A POR%20FAVOR%20ME%20INFORME%20SEU%20ENDEREÇO:`;
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+    
+    <h2 id="ENTRETEDIMENTO" class="category">ENTRETEDIMENTO</h2>
+    <section class="products">
+        <div class="product">
+            <img src="static/images/produto1.png" alt="Produto 1">
+            <h2>NETFLIX</h2>
+            <p>R$ 20,00</p>
+            <button class="add-to-cart-btn" onclick="addToCart('NETFLIX', 20)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="product">
+            <img src="static/images/produto2.png" alt="Produto 2">
+            <h2>SPOTIFY</h2>
+            <p>R$ 30,00</p>
+            <button class="add-to-cart-btn" onclick="addToCart('SPOTIFY', 30)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="product">
+            <img src="static/images/produto3.png" alt="Produto 3">
+            <h2>IPTV</h2>
+            <p>R$ 30,00</p>
+            <button class="add-to-cart-btn" onclick="addToCart('IPTV', 30)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="product">
+            <img src="static/images/produto5.png" alt="Produto 4">
+            <h2>DISNEY +</h2>
+            <p>R$ 20,00</p>
+            <button class="add-to-cart-btn" onclick="addToCart('DISNEY', 30)">Adicionar ao Carrinho</button>
+        </div>
+    </section>
+
+    <h2 id="INTERNET" class="category">INTERNET</h2>
+    <section class="products">
+        <div class="product">
+            <img src="static/images/produto4.png">
+            <h2>GIGAS DA VIVO</h2>
+            <p>R$ 20,00</p>
+            <p>TODO DIA VAI CAIR 4 GIGAS DE INTERNET DURANTE 30 DIAS</p>
+            <button class="add-to-cart-btn" onclick="addToCart('120 GIGAS', 20)">Adicionar ao Carrinho</button>
+        </div>
+    </div>
+        
+    <div class="product">
+        <img src="static/images/produto4.png">
+        <h2>GIGAS DA VIVO</h2>
+        <p>R$ 30,00</p>
+        <p>TODO DIA VAI CAIR 10 GIGAS DE INTERNET DURANTE 30 DIAS</p>
+        <button class="add-to-cart-btn" onclick="addToCart('300 GIGAS', 30)">Adicionar ao Carrinho</button>
+    </div>
+
+        <div class="product">
+            <img src="static/images/produto4.png">
+            <h2>GIGAS DA VIVO</h2>
+            <p>R$ 40,00</p>
+            <p>TODO DIA VAI CAIR 20 GIGAS DE INTERNET DURANTE 30 DIAS</p>
+            <button class="add-to-cart-btn" onclick="addToCart('600 GIGAS', 40)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="product">
+            <img src="static/images/produto4.png">
+            <h2>GIGAS DA VIVO</h2>
+            <p>R$ 50,00</p>
+            <p>TODO DIA VAI CAIR 30 GIGAS DE INTERNET DURANTE 30 DIAS</p>
+            <button class="add-to-cart-btn" onclick="addToCart('900 GIGAS', 50)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="product">
+            <img src="static/images/produto4.png">
+            <h2>GIGAS DA VIVO</h2>
+            <p>R$ 60,00</p>
+            <p>TODO DIA VAI CAIR 40  GIGAS DE INTERNET DURANTE 30 DIAS</p>
+            <button class="add-to-cart-btn" onclick="addToCart('1200 GIGAS', 60)">Adicionar ao Carrinho</button>
+        </div>
+    </section>
+    
+    <p>   </p>
+    
+    <footer>
+        <p>&copy; 2025 EG SOLUÇÕES - A Melhor Plataforma de Vendas de Streaming</p>
+    </footer>
+    
+    </body>
+    </html>

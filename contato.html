@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <meta property="og:title" content="EG SOLUÇÕES - A Melhor Plataforma de Vendas de Streaming">
+    <meta property="og:description" content="Junte-se à EG SOLUÇÕES e aproveite a conveniência de comprar produtos e desfrutar do melhor streaming!">
+    <meta property="og:image" content="https://egsolucoes.com/static/images/logo-icon.png">
+    <meta property="og:url" content="https://egsolucoes.com/static/images/logo-icon.png">
+    
+    <link rel="icon" href="static/images/logo-icon.png" type="image/png">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; /* Fundo branco */
+            color: #000000; /* Texto preto */
+        }
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .products, .menu-principal, .info-section {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        header {
+            background-color: #000000; /* Fundo preto */
+            color: #ffffff; /* Texto branco */
+            padding: 20px;
+            text-align: center;
+        }
+        header img {
+            width: 150px; /* Tamanho reduzido da imagem */
+            height: auto; /* Manter a proporção da imagem */
+            margin-bottom: 20px; /* Espaço entre a imagem e o título */
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333333; /* Fundo cinza escuro */
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        nav img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+        nav a:hover {
+            color: #cccccc; /* Hover com cinza claro */
+        }
+
+        .menu-principal {
+            text-align: center;
+            padding: 40px;
+            background-color: #f0f0f0; /* Fundo claro */
+        }
+        .menu-principal img {
+            width: 200px;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .product {
+            background-color: #f9f9f9; /* Fundo claro para os produtos */
+            margin: 15px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            text-align: center;
+            width: 300px;
+            transition: transform 0.3s;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #000000; /* Fundo preto */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: #25D366; /* Cor do WhatsApp */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .whatsapp-btn:hover {
+            background-color: #1ebf57; /* Hover do WhatsApp */
+        }
+
+        .info-section {
+            padding: 20px;
+            text-align: center;
+            background-color: #ffffff; /* Fundo branco */
+            margin: 20px 0;
+        }
+
+        .info-section p {
+            font-size: 18px;
+            color: #333333; /* Texto cinza escuro */
+        }
+
+        .buy-btn {
+            display: inline-block;
+            background-color: #28a745; /* Cor do botão comprar */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .buy-btn:hover {
+            background-color: #218838; /* Hover do botão comprar */
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header {
+                padding: 10px;
+            }
+            nav {
+                flex-direction: column;
+                padding: 5px;
+            }
+            nav a {
+                font-size: 12px;
+                padding: 10px;
+            }
+            .menu-principal {
+                padding: 20px;
+            }
+            .products {
+                flex-direction: column;
+                padding: 10px;
+            }
+            .product {
+                width: 100%;
+                margin: 10px 0;
+            }
+            .product img {
+                width: 80%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                font-size: 10px;
+                padding: 5px;
+            }
+            .menu-principal img {
+                width: 150px;
+            }
+            .product img {
+                width: 70%;
+            }
+            .product {
+                padding: 15px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+<header>
+    <img src="static/images/menu_image.png" alt="Imagem do Menu Principal">
+    <h1>Bem-vindo à EG SOLUÇÕES</h1>
+</header>
+
+<nav>
+    <a href="inicio.html">
+        <img src="static/images/home_icon.png" alt="Início">Início
+    </a>
+    <a href="produtos.html">
+        <img src="static/images/products_icon.png" alt="Produtos">Produtos
+    </a>
+    <a href="about.html">
+        <img src="static/images/about_icon.png" alt="Sobre Nós">Sobre Nós
+    </a>
+    <a href="https://egsolucoes.com/">
+        <img src="static/images/aposta_icon.png" alt="Apostas">Apostas
+    </a>
+    <a href="contato.html">
+        <img src="static/images/contact_icon.png" alt="Contato">Contato
+    </a>
+</nav>
+
+<section class="info-section" id="contato">
+    <h2>Entre em Contato Conosco</h2>
+    <p>Se você tiver alguma dúvida ou quiser saber mais sobre nossos produtos, não hesite em entrar em contato conosco. Clique no botão abaixo para falar diretamente com a gente pelo WhatsApp!</p>
+    <a href="https://wa.me/558387202109?text=SEJA%20BEM%20VINDO%20A%20EG%20SOLU%C3%87%C3%95ES" class="whatsapp-btn" target="_blank">Entre em contato pelo WhatsApp</a>
+</section>
+
+<footer>
+    <p>&copy; 2024 EG SOLUÇÕES - A Melhor Plataforma de Vendas de Streaming</p>
+</footer>
+
+</body>
+</html>
