@@ -30,13 +30,13 @@
 
         /* Header */
         header {
-            background-color: #1f1f1f; /* Fundo do header mais escuro */
+            background-color: #000; /* Fundo do header mais escuro */
             color: #ffffff; /* Texto claro */
             padding: 20px;
             text-align: center;
         }
         header img {
-            max-width: 40%;
+            max-width: 23%;
             height: auto;
         }
 
@@ -163,6 +163,19 @@
     <h1>Bem-vindo à Nossa Loja de Produtos</h1>
 </header>
 
+<script>
+    // Função para gerar a mensagem e abrir o WhatsApp
+    function sendToWhatsApp(productName, productPrice) {
+        const whatsappNumber = '558387202109'; // Insira o número de WhatsApp do vendedor
+        const message = `Olá, gostaria de comprar o seguinte produto:\n\nProduto: ${productName}\nPreço: R$ ${productPrice}\n\nTOTAL:R$ ${productPrice}\n\nINFORME A FORMA DE PAGAMENTO :`;
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappLink = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodedMessage}`;
+        
+        // Redireciona o usuário para o WhatsApp
+        window.open(whatsappLink, '_blank');
+    }
+    </script>
+
 <nav>
     <a href="inicio.html">
         <img src="static/images/home_icon.png" alt="Início">Início
@@ -196,15 +209,15 @@
 <section class="products" id="produtos">
     <div class="product">
         <img src="static/images/produto1.png" alt="Produto 1">
-        <h2>COCA-COLA LATA</h2>
-        <p>R$ 5,00</p>
-        <button class="buy-btn" onclick="sendToWhatsApp('COCA-COLA LATA', '5,00')">Comprar</button>
+        <h2>NETFLIX</h2>
+        <p>R$ 20,00</p>
+        <button class="buy-btn" onclick="sendToWhatsApp('NETFLIX', '20,00')">Comprar</button>
     </div>
     <div class="product">
         <img src="static/images/produto2.png" alt="Produto 2">
-        <h2>MONTILA</h2>
+        <h2>SPOTIFY</h2>
         <p>R$ 30,00</p>
-        <button class="buy-btn" onclick="sendToWhatsApp('MONTILA', '30,00')">Comprar</button>
+        <button class="buy-btn" onclick="sendToWhatsApp('SPOTIFY', '30,00')">Comprar</button>
     </div>
 </section>
 
