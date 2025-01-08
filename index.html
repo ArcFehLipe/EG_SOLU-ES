@@ -167,7 +167,7 @@
 <script>
     // Função para gerar a mensagem e abrir o WhatsApp
     function sendToWhatsApp(productName, productPrice) {
-        const whatsappNumber = '558387202109'; // Insira o número de WhatsApp do vendedor
+        const whatsappNumber = '559681236070'; // Insira o número de WhatsApp do vendedor
         const message = `Olá, gostaria de comprar o seguinte produto:\n\nProduto: ${productName}\nPreço: R$ ${productPrice}\n\nTOTAL:R$ ${productPrice}\n\nINFORME A FORMA DE PAGAMENTO :`;
         const encodedMessage = encodeURIComponent(message);
         const whatsappLink = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodedMessage}`;
